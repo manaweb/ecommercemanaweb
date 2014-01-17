@@ -92,7 +92,7 @@ CLASS ISC_PRODUCTDETAILS_PANEL extends PANEL
 	 */
 	private function SetPricingDetails()
 	{
-		$GLOBALS['PriceLabel'] = GetLang('Price');
+		$GLOBALS['PriceLabel'] = GetLang('Price').' : ';
 
 		if($this->productClass->GetProductCallForPricingLabel()) {
 			$GLOBALS['ProductPrice'] = $GLOBALS['ISC_CLASS_TEMPLATE']->ParseGL($this->productClass->GetProductCallForPricingLabel());
@@ -105,7 +105,12 @@ CLASS ISC_PRODUCTDETAILS_PANEL extends PANEL
 			return;
 		}
 		else {
-			$GLOBALS['ProductPrice'] = $this->productClass->GetCalculatedPrice();
+			if ($this->productClass->GetPrice() > 0.00)
+				$GLOBALS['ProductPrice'] = $this->productClass->GetCalculatedPrice();
+			else {
+				$GLOBALS['ProductPrice'] = '';
+				$GLOBALS['PriceLabel'] = '';
+			}
 		}
 
 		$this->SetTaxLabel();
