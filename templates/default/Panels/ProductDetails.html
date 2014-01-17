@@ -1,0 +1,233 @@
+<script type="text/javascript" src="%%GLOBAL_AppPath%%/javascript/jquery/plugins/jCarousel/jCarousel.js?%%GLOBAL_JSCacheToken%%"></script>
+%%SNIPPET_ProductImageZoomer%%
+<script type="text/javascript">//<![CDATA[
+var ThumbURLs = new Array();
+var ProductImageDescriptions = new Array();
+var CurrentProdThumbImage = %%GLOBAL_CurrentProdThumbImage%%;
+var ShowVariationThumb =false;
+var ProductThumbWidth = %%GLOBAL_ProductThumbWidth%%;
+var ProductThumbHeight = %%GLOBAL_ProductThumbHeight%%;
+var ProductMaxZoomWidth = %%GLOBAL_ProductMaxZoomWidth%%;
+var ProductMaxZoomHeight = %%GLOBAL_ProductMaxZoomHeight%%;
+var ProductTinyWidth = %%GLOBAL_ProductMaxTinyWidth%%;
+var ProductTinyHeight = %%GLOBAL_ProductMaxTinyHeight%%;
+%%GLOBAL_ProdImageJavascript%%
+var ShowImageZoomer = %%GLOBAL_ShowImageZoomer%%;
+var productId = %%GLOBAL_ProductId%%;
+//]]>
+$(function() {
+	$('#meavise').fancybox();
+});
+</script>
+<div class="Block Moveable Panel PrimaryProductDetails" id="ProductDetails">
+<div class="BlockContent">
+%%GLOBAL_ProductDetailFlashMessages%%
+%%GLOBAL_ProductNameOptimizerScriptTag%%
+<h25>%%GLOBAL_ProductName%%</h25>
+%%GLOBAL_ProductNameOptimizerNoScriptTag%%
+<table>
+<tr><td>
+<div class="ProductThumb" style="%%GLOBAL_HideProductThumb%%">
+%%GLOBAL_LightBoxImageJavascript%%
+%%SNIPPET_ProductThumbImage%%
+<div class="ImageCarouselBox" style="margin:0 auto; %%GLOBAL_HideImageCarousel%%">
+<a id="ImageScrollPrev" class="prev" href="#"><img src="%%GLOBAL_IMG_PATH%%/LeftArrow.png" alt="" width="20" height="20" /></a>
+<div class="ProductTinyImageList">
+<ul>
+%%SNIPPET_ProductTinyImages%%
+</ul>
+</div>
+<a id="ImageScrollNext" class="next" href="#"><img src="%%GLOBAL_IMG_PATH%%/RightArrow.png" alt="" width="20" height="20" /></a>
+</div>
+<div style="%%GLOBAL_HideMorePicturesLink%%" class="SeeMorePicturesLink">
+<a href="#" onclick="%%GLOBAL_TinyImageClickJavascript%% return false;" class="ViewLarger">%%GLOBAL_SeeMorePictures%%</a>
+</div>
+</div>
+</td><td>
+<div class="ProductMain">
+<div class="ProductDetailsGrid">
+<div class="DetailRow" style="display: %%GLOBAL_HideRRP%%">
+<div class="Label">%%LNG_RRP%%:</div>
+<div class="Value">
+%%GLOBAL_RetailPrice%%
+</div>
+</div>
+<div class="DetailRow" style="%%GLOBAL_HidePrice%%">
+<div class="Label">%%GLOBAL_PriceLabel%%:</div>
+<div class="Value">
+<em class="ProductPrice VariationProductPrice">%%GLOBAL_ProductPrice%%</em>
+%%GLOBAL_IncludingExcludingTax%% %%GLOBAL_YouSave%%
+</div>
+</div>
+<div class="DetailRow ProductSKU" style="display: %%GLOBAL_HideSKU%%">
+<div class="Label">%%LNG_SKU%%:</div>
+<div class="Value">
+<span class="VariationProductSKU">
+%%GLOBAL_SKU%%
+</span>
+</div>
+</div>
+<div class="DetailRow" style="%%GLOBAL_HideVendorDetails%%">
+<div class="Label">%%LNG_Vendor%%:</div>
+<div class="Value">
+%%GLOBAL_VendorName%%
+</div>
+</div>
+<div class="DetailRow" style="display: %%GLOBAL_HideBrandLink%%">
+<div class="Label">%%LNG_Brand%%:</div>
+<div class="Value">
+<a href="%%GLOBAL_BrandLink%%">%%GLOBAL_BrandName%%</a>
+</div>
+</div>
+<div class="DetailRow" style="display: %%GLOBAL_HideCondition%%">
+<div class="Label">%%LNG_Condition%%:</div>
+<div class="Value">
+%%GLOBAL_ProductCondition%%
+</div>
+</div>
+<div class="DetailRow" style="display: %%GLOBAL_HideWeight%%">
+<div class="Label">%%LNG_Weight%%:</div>
+<div class="Value">
+<span class="VariationProductWeight">
+%%GLOBAL_ProductWeight%%
+</span>
+</div>
+</div>
+<div class="DetailRow" style="display: %%GLOBAL_HideRating%%">
+<div class="Label">%%LNG_Rating%%:</div>
+<div class="Value">
+<img width="64" height="12" src="%%GLOBAL_IMG_PATH%%/IcoRating%%GLOBAL_Rating%%.gif" alt="" />
+<span style="display:%%GLOBAL_HideReviewLink%%">(
+<a href="#reviews" onclick="%%GLOBAL_ReviewLinkOnClick%%">
+%%GLOBAL_ReviewLinkText%%
+</a>
+)</span>
+</div>
+</div>
+<div class="DetailRow" style="display: %%GLOBAL_HideAvailability%%">
+<div class="Label">%%LNG_Availability%%:</div>
+<div class="Value">
+%%GLOBAL_Availability%%
+</div>
+</div>
+<div class="DetailRow" style="display: %%GLOBAL_HideShipping%%">
+</div>
+<div class="DetailRow" style="display: %%GLOBAL_HideShipping%%">
+<div class="Label">%%LNG_Shipping%%:</div>
+<div class="Value">
+%%GLOBAL_ShippingPrice%%
+</div>
+</div>
+<div class="DetailRow InventoryLevel" style="%%GLOBAL_HideCurrentStock%%">
+<div class="Label">%%LNG_CurrentStock%%:</div>
+<div class="Value">
+<span class="VariationProductInventory">
+%%GLOBAL_InventoryList%%
+</span>
+</div>
+</div>
+<div class="DetailRow" style="%%GLOBAL_HideGiftWrapMessage%%">
+<div class="Label">%%LNG_GiftWrapping%%:</div>
+<div class="Value">
+%%GLOBAL_GiftWrappingAvailable%%
+</div>
+</div>
+</div>
+%%SNIPPET_ProductAddToCart%%
+</div>
+</td>
+<td>
+<img src="%%GLOBAL_ShopPath%%/img/pagarcom.png">
+%%GLOBAL_TabelaParcela1%%</td>
+</tr></table>
+%%GLOBAL_AddThisLink%%
+<br class="Clear" />
+<hr />
+</div>
+</div>
+<style>
+html * {font-family:Verdana, Arial, Helvetica, sans-serif;}
+#fancy_outer {
+	height: 350px !important;
+	overflow: hidden;
+}
+#pergunta-vendedor{
+	display: none;
+}
+#fancy_div{
+	background-color: #FFF !important;
+	color: #000 !important;
+}
+#perguntar2{
+	font-family: 'Century Gothic' !important;
+}
+#fancybox-overlay{
+	z-index: 999999 !important;
+}
+#fancybox-wrap{
+	z-index: 99999999 !important;
+}
+.inputText{
+	width: 528px;
+	height: 39px;
+	font-size: 100%;
+	border-left: 3px solid #002B63;
+	border-right: 1px solid #DDDFDF;
+	border-top: 1px solid #DDDFDF;
+	border-bottom: 1px solid #DDDFDF;
+	background: #F5F5F4;
+}
+.textarea2{
+	font-size: 100%;
+	border-left: 3px solid #002B63;
+	border-right: 1px solid #DDDFDF;
+	border-top: 1px solid #DDDFDF;
+	border-bottom: 1px solid #DDDFDF;
+	background: #F5F5F4;
+}
+.enviar-contato{
+	background: #002B63;
+	padding: 12px 80px 12px 80px;
+	border: none;
+	font-family: 'Century Gothic';
+	line-height: 20px;
+	font-size: 18px;
+	color: #FFF;
+	margin-top: 20px;
+}
+</style>
+<script>
+	$(function(){
+		$("#mostrar").fancybox({
+			'width': '600px',
+			'height': '600px'
+		});
+	});
+</script>
+</head>
+<div class="fancybox" style="display: none">
+	<div id="mostrar">
+	<form method="post" id="formMeInforme" action="enviaemail.php">
+		<label>
+			Nome: <br>
+			<input name="nome" required="" class="inputText" size="70" type="text">
+		</label><br>
+		<label>
+			E-mail: <br>
+			<input size="50" required="" class="inputText" name="email" type="text">
+		</label><br>
+		<label>
+			Produto: <br>
+			<input size="50" required="" name="produto" class="inputText" type="text" value="">
+		</label><br>
+		<label>
+			Quantidade: <br>
+			<input size="50" required="" name="quantidade" class="inputText" type="text">
+		</label><br>
+		<input type="hidden" value="" name="local" />
+		<div style="text-align: center;">
+			<input value="enviar" class="enviar-contato" type="submit">
+		</div>
+	</form>
+	</div>
+</div>	
